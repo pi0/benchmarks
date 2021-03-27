@@ -35,14 +35,14 @@ if (!getAvailableResults().length) {
   compareResultsInteractive()
 }
 
-function getAvailableResults() {
+function getAvailableResults () {
   return readdirSync(resultsPath)
     .filter((file) => file.match(/(.+)\.json$/))
     .sort()
     .map((choice) => choice.replace('.json', ''))
 }
 
-function formatHasRouter(hasRouter) {
+function formatHasRouter (hasRouter) {
   return typeof hasRouter === 'string' ? hasRouter : (hasRouter ? '✓' : '✗')
 }
 
@@ -61,7 +61,7 @@ ${compareResults(true)}
   writeFileSync('README.md', md.split('# Benchmarks')[0] + benchmarkMd, 'utf8')
 }
 
-function compareResults(markdown) {
+function compareResults (markdown) {
   const tableStyle = !markdown ? {} : {
     chars: {
       top: '',
@@ -78,7 +78,7 @@ function compareResults(markdown) {
       'right-mid': '',
       left: '|',
       right: '|',
-      middle: '|',
+      middle: '|'
     },
     style: {
       border: [],
@@ -136,7 +136,7 @@ function compareResults(markdown) {
   return table.toString()
 }
 
-async function compareResultsInteractive() {
+async function compareResultsInteractive () {
   let choices = getAvailableResults()
 
   const firstChoice = await inquirer.prompt([{
@@ -175,6 +175,6 @@ async function compareResultsInteractive() {
  • ${slowest} ${chalk.blue('request average is')} ${slowestAverage}`)
 }
 
-function bold(writeBold, str) {
+function bold (writeBold, str) {
   return writeBold ? chalk.bold(str) : str
 }
