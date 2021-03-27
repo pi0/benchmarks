@@ -23,7 +23,8 @@ jobs:
     - name: run benchmarks
       run: |
         npm install
-        npm start y 100 10 40
+        #npm start y 100 10 40
+        npm start y 1 1 1
 
     - name: compare results
       run: |
