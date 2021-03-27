@@ -24,6 +24,8 @@ let choices = readdirSync(resultsPath)
 
 const bold = (writeBold, str) => writeBold ? chalk.bold(str) : str
 
+const formatHasRouter = hasRouter => typeof hasRouter === 'string' ? hasRouter : (hasRouter ? '✓' : '✗')
+
 if (!choices.length) {
   console.log(chalk.red('Benchmark to gather some results to compare.'))
 } else if (commander.table && !commander.percentage) {
@@ -86,7 +88,7 @@ if (!choices.length) {
       table.push([
         bold(beBold, chalk.blue(data.server)),
         bold(beBold, version),
-        bold(beBold, hasRouter ? '✓' : '✗'),
+        bold(beBold, formatHasRouter(hasRouter)),
         bold(beBold, requests ? requests.toFixed(1) : 'N/A'),
         bold(beBold, latency ? latency.toFixed(2) : 'N/A'),
         bold(beBold, throughput ? (throughput / 1024 / 1024).toFixed(2) : 'N/A')
@@ -140,7 +142,7 @@ if (!choices.length) {
     table.push([
       bold(beBold, chalk.blue(result.server)),
       bold(beBold, version),
-      bold(beBold, hasRouter ? '✓' : '✗'),
+      bold(beBold, formatHasRouter(hasRouter)),
       bold(beBold, `${result.requests.mean}\n(${getPct(base.request, result.requests.mean)})`),
       bold(beBold, `${result.latency.mean}\n(${getPct(base.latency, result.latency.mean)})`),
       bold(beBold, `${(result.throughput.mean / 1024 / 1024).toFixed(2)}\n(${getPct(base.throughput, result.throughput.mean)})`)
