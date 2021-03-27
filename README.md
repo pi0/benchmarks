@@ -41,15 +41,15 @@ benchmark [arguments (optional)]
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v14.16.0`
-* __Run:__ Sat Mar 27 2021 18:12:00 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sat Mar 27 2021 18:23:30 GMT+0000 (Coordinated Universal Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000` (two rounds; one to warm-up, one to measure)
 
 |         | Version | Router | Requests/s | Latency | Throughput/Mb |
 | :--     | --:     | --:    | :-:        | --:     | --:           |
-| bare    | 10.13.0 | ✗      | 6418.0     | 0.03    | 1.14          |
-| connect | 3.7.0   | ✗      | 6186.0     | 0.03    | 1.10          |
-| fastify | 3.14.1  | ✓      | 6186.0     | 0.03    | 1.10          |
-| h3      | 0.2.7   | ✗      | 5150.0     | 0.04    | 0.87          |
-| koa     | 2.13.1  | ✗      | 4538.0     | 0.06    | 0.81          |
-| 0http   | 3.1.0   | ✓      | 4234.0     | 0.06    | 0.76          |
-| express | 4.17.1  | ✓      | 3051.0     | 0.06    | 0.54          |
+| h3      | 0.2.7   | ✗      | 38613.0    | 25.47   | 6.52          |
+| bare    | 10.13.0 | ✗      | 37447.0    | 26.22   | 6.68          |
+| fastify | 3.14.1  | ✓      | 36082.6    | 27.21   | 6.43          |
+| 0http   | 3.1.0   | ✓      | 34554.2    | 28.45   | 6.16          |
+| connect | 3.7.0   | ✗      | 31385.0    | 31.37   | 5.60          |
+| koa     | 2.13.1  | ✗      | 26299.2    | 37.52   | 4.69          |
+| express | 4.17.1  | ✓      | 8663.5     | 114.84  | 1.54          |
