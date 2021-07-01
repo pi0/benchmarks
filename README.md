@@ -40,17 +40,17 @@ benchmark [arguments (optional)]
 # Benchmarks
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Node:__ `v14.17.0`
-* __Run:__ Tue Jun 01 2021 02:09:29 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v14.17.1`
+* __Run:__ Thu Jul 01 2021 00:35:58 GMT+0000 (Coordinated Universal Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000` (two rounds; one to warm-up, one to measure)
 
 |           | Version | Router | Requests/s | Latency | Throughput/Mb |
 | :--       | --:     | --:    | :-:        | --:     | --:           |
-| 0http     | 3.1.1   | ✓      | 68568.0    | 14.12   | 12.23         |
-| fastify   | 3.17.0  | ✓      | 63327.2    | 15.31   | 11.29         |
-| bare      | 10.13.0 | ✗      | 63247.2    | 15.32   | 11.28         |
-| h3-router | 0.2.10  | ✓      | 61975.2    | 15.65   | 10.46         |
-| connect   | 3.7.0   | ✗      | 61166.4    | 15.85   | 10.91         |
-| h3        | 0.2.10  | ✗      | 60753.6    | 15.98   | 10.26         |
-| koa       | 2.13.1  | ✗      | 45840.0    | 21.31   | 8.18          |
-| express   | 4.17.1  | ✓      | 12593.8    | 78.86   | 2.25          |
+| bare      | 10.13.0 | ✗      | 63515.2    | 15.28   | 11.33         |
+| fastify   | 3.18.1  | ✓      | 62181.6    | 15.61   | 11.09         |
+| connect   | 3.7.0   | ✗      | 61420.0    | 15.81   | 10.95         |
+| 0http     | 3.1.1   | ✓      | 59476.8    | 16.34   | 10.61         |
+| h3        | 0.2.11  | ✗      | 58490.4    | 16.61   | 9.87          |
+| h3-router | 0.2.11  | ✓      | 57208.0    | 16.99   | 9.66          |
+| koa       | 2.13.1  | ✗      | 46494.4    | 21.02   | 8.29          |
+| express   | 4.17.1  | ✓      | 12335.6    | 80.51   | 2.20          |
